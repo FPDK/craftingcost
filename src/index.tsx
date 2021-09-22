@@ -1,13 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-//import 'bootstrap/dist/css/bootstrap.css';
-import './assets/css/bootstrap.darkly.css'
-import './assets/css/custom.css'
-import App from './App';
+import "react-app-polyfill/ie11"
+import "react-app-polyfill/stable"
+import ReactDOM from "react-dom"
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+import App from "./App"
+
+ReactDOM.render(<App/>, document.getElementById("root"))

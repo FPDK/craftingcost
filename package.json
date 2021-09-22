@@ -2,15 +2,26 @@
   "name": "craftingcost",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "clear:babel-cache": "rimraf -rf ~/.babel.json",
+    "tool:autoprefixer": "postcss public/css/*.css --use autoprefixer -d public/css",
+    "_____________________________________watchers_____________________________________": "",
+    "watch:css": "sass --source-map-urls=absolute --watch src/assets/scss:public/css",
+    "watch:js": "react-scripts start",
+    "start": "npm-run-all -p watch:*",
+    "_____________________________________builders_____________________________________": "",
+    "build:updatebrowserslist": "npx browserslist@latest --update-db",
+    "build:css": "sass src/assets/scss:public/css",
+    "build:js": "react-scripts build",
+    "build": "npm-run-all -p build:*",
+    "_______________________________________tools________________________________________": "",
+    "up": "yarn upgrade-interactive"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
     "lodash-es": "^4.17.20",
@@ -30,32 +41,40 @@
     "@hookform/resolvers": "^2.6.0",
     "@types/lodash-es": "^4.17.4",
     "@types/react": "^17.0.6",
-    "@types/react-dom": "^17.0.5",
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack-env": "^1.16.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react-dom": "^17.0.9",
+    "npm-run-all": "4.1.5",
     "classnames": "2.2.6",
     "eslint-plugin-immutable": "^1.0.0",
     "eslint-plugin-react-perf": "^3.3.0",
     "sass": "1.32.8"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "eslintConfig": {
+    "ignorePatterns": [],
+    "plugins": [
+      "immutable",
+      "react-perf"
+    ],
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "plugin:react-perf/recommended"
+    ],
+    "rules": {
+      "react-perf/jsx-no-new-object-as-prop": "warn",
+      "react-perf/jsx-no-new-function-as-prop": "warn",
+      "react-perf/jsx-no-new-array-as-prop": "warn"
+    }
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "> 0.25%",
+      "ie >= 11",
+      "not op_mini all",
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",
