@@ -1,1 +1,18 @@
-// Todo: Set up SCSS...
+@import "./bootswatch/darkly/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "./bootswatch/darkly/bootswatch";
+
+@import "responsive-table";
+
+@import "ProfessionTable";
+@import "CostTable";
+@import "Currency";
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.wait,
+.wait * {
+  cursor: wait !important;
+}

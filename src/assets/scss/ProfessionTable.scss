@@ -1,0 +1,15 @@
+.profession-table {
+  height: calc(100vh - 140px);
+  overflow: auto;
+
+  th {
+    &.name {
+      width: auto
+    }
+
+    &.slot {
+      width: 80px
+    }
+  }
+
+}

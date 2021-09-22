@@ -1,0 +1,47 @@
+.cost-table {
+
+  height: calc(100vh - 140px);
+  overflow: auto;
+
+  th {
+
+    &.item {
+      width: auto
+    }
+
+    &.quantity {
+      width: 80px
+    }
+
+    &.availability {
+      width: 98px
+    }
+
+    &.price-item {
+      max-width: 122px
+    }
+
+    &.price-total {
+      max-width: 142px
+    }
+
+  }
+
+  // All cells except the first must be aligned right
+  th:not(:first-child),
+  td:not(:first-child) {
+    text-align: right;
+  }
+
+  // Spacing between image and name
+  td.item {
+    img {
+      margin: .1rem .5rem .1rem 0;
+    }
+  }
+
+  tfoot tr td {
+    font-weight: bold;
+  }
+
+}

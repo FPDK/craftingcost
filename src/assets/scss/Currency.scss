@@ -1,0 +1,22 @@
+.currency {
+  padding-right: 16px;
+  margin-right: 4px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.currency:last-child {
+  margin-right: 0;
+}
+
+.currency-gold {
+  background-image: url("https://wow.zamimg.com/images/icons/money-gold.gif");
+}
+
+.currency-silver {
+  background-image: url("https://wow.zamimg.com/images/icons/money-silver.gif");
+}
+
+.currency-copper {
+  background-image: url("https://wow.zamimg.com/images/icons/money-copper.gif");
+}

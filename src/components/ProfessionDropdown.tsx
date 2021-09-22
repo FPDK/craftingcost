@@ -1,13 +1,18 @@
 import {Professions} from "../types";
-import React, {useCallback, useRef, useState} from "react";
+import React, {HTMLAttributes, useCallback, useRef, useState} from "react";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
 
 type ProfessionDropdownProps = {
     selectedProfession: Professions | undefined
     setActiveProfession: (profession: Professions) => () => void
+    className?: HTMLAttributes<HTMLDivElement>["className"]
 }
 
-const ProfessionDropdown = ({selectedProfession, setActiveProfession}: ProfessionDropdownProps) => {
+const ProfessionDropdown = ({
+                                selectedProfession,
+                                setActiveProfession,
+                                className
+                            }: ProfessionDropdownProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const toggleOpen = useCallback(() => setIsOpen(prevState => !prevState), [])
@@ -24,7 +29,7 @@ const ProfessionDropdown = ({selectedProfession, setActiveProfession}: Professio
         Professions.TAILORING,]);
 
 
-    return <Dropdown isOpen={isOpen} toggle={toggleOpen} onClick={e => console.log(e)}>
+    return <Dropdown isOpen={isOpen} toggle={toggleOpen} className={className}>
         <DropdownToggle caret>
             {selectedProfession}
         </DropdownToggle>
